@@ -22,7 +22,7 @@ class App extends Component {
           this.setState(
 
           () =>{
-            return {name:{nameF:'Tcamy!', lastName: 'Ficccnk'}};
+            return {name:{nameF:'Tcamy!', lastName: 'Ficccccccnk'}};
           },
           () => {//callback function, after the normal function finished
               console.log("ff")        
