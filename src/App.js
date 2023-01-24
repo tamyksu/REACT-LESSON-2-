@@ -6,31 +6,46 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      name:{ nameF:'Tamy!', lastName: 'Fink'},
-      company:'c',
+          monsters:[
+            {
+              name:"TON",
+              id:1,
+            },
+            {
+              name:"BON",
+              id:2,
+            },
+            {
+              name:"dvv",
+              id:3,
+            },
+            {
+              name:"dcc",
+              id:4,
+            },
+          ]
     };
+
+  }
+  componentDidMount(){
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => 
+    console.log(res.json())
+    .then((users)= console.log(users))
+    );
   }
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-          Hi {this.state.name.nameF} {this.state.name.lastName}works in {this.state.company}
-          </p>
-         <button onClick={()=>{
-          this.setState(
-
-          () =>{
-            return {name:{nameF:'Tcamy!', lastName: 'Ficccccccnk'}};
-          },
-          () => {//callback function, after the normal function finished
-              console.log("ff")        
-          }
-          );
-          console.log("d",this.state);
-         }}> Change name</button>
-        </header>
+      <div  className="App" >
+        {
+      this.state.monsters.map((monster)=>{
+        return (
+        <div key={monster.id}>
+        <h1 align = 'left' >{monster.name}</h1>
+       </div>
+        );
+      })
+      };
       </div>
     );
 
